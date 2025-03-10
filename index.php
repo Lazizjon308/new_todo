@@ -20,6 +20,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete'])) {
 $tasks = $db->getTasks();
 ?>
 
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
