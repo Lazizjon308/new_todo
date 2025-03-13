@@ -34,4 +34,5 @@ class DB {
         $stmt->execute();
     }
 }
+
 ?>
