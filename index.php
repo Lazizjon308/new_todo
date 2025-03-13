@@ -3,14 +3,14 @@ require_once 'DB.php';
 
 $db = new DB();
 
-// ✅ Task qo'shish
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['task'])) {
     $db->addTask($_POST['task']);
     header("Location: index.php");
     exit();
 }
 
-// ✅ Task o'chirish
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete'])) {
     $db->deleteTask($_POST['delete']);
     header("Location: index.php");
@@ -44,13 +44,13 @@ $tasks = $db->getTasks();
     <div class="container">
         <h1>Todo List</h1>
 
-        <!-- Task qo'shish -->
+        
         <form method="POST">
             <input type="text" name="task" placeholder="Enter a task..." required>
             <button type="submit">Add Task</button>
         </form>
 
-        <!-- Tasklarni chiqarish -->
+        
         <ul class="task-list">
             <?php foreach ($tasks as $task): ?>
                 <li class="task-item">

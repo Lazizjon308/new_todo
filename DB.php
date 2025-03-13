@@ -8,7 +8,7 @@ class DB {
         $this->db = (new DBConnection())->getConnection();
     }
 
-    // ✅ Tasklarni olish
+
     public function getTasks() {
         $sql = "SELECT * FROM todos ORDER BY id DESC";
         $stmt = $this->db->prepare($sql);
@@ -16,7 +16,7 @@ class DB {
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    // ✅ Yangi task qo‘shish
+
     public function addTask($task) {
         $task = trim($task);
         if (!empty($task)) {
@@ -27,7 +27,7 @@ class DB {
     }
     
 
-    // ✅ Taskni o‘chirish
+    
     public function deleteTask($id) {
         $stmt = $this->db->prepare("DELETE FROM todos WHERE id = :id");
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
